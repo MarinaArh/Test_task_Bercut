@@ -1,4 +1,4 @@
---создание структур для ЗАДАЧИ 1
+--СЃРѕР·РґР°РЅРёРµ С‚Р°Р±Р»РёС†С‹
 CREATE TABLE test_pay
     (clnt_id  NUMBER(10) NOT NULL,
      subs_id  NUMBER(10) NOT NULL,
@@ -8,15 +8,15 @@ CREATE TABLE test_pay
      );
 /
 COMMENT ON COLUMN test_pay.clnt_id 
-   IS 'ID клиента';
+   IS 'ID РєР»РёРµРЅС‚Р°';
 COMMENT ON COLUMN test_pay.subs_id
-   IS 'ID абонента';
+   IS 'ID Р°Р±РѕРЅРµРЅС‚Р°';
 COMMENT ON COLUMN test_pay.pay_sum
-   IS 'Сумма платежа';
+   IS 'РЎСѓРјРјР° РїР»Р°С‚РµР¶Р°';
 COMMENT ON COLUMN test_pay.pay_date
-   IS 'Дата платежа';
+   IS 'Р”Р°С‚Р° РїР»Р°С‚РµР¶Р°';
 COMMENT ON COLUMN test_pay.del_date
-   IS 'Дата удаления платежа';
+   IS 'Р”Р°С‚Р° СѓРґР°Р»РµРЅРёСЏ РїР»Р°С‚РµР¶Р°';
 /
 CREATE TABLE test_data
     (n        NUMBER(10) PRIMARY KEY,
@@ -26,26 +26,26 @@ CREATE TABLE test_data
      );
 /     
 COMMENT ON COLUMN test_data.n
-   IS 'ID (порядковый номер)';
+   IS 'ID (РїРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ)';
 COMMENT ON COLUMN test_data.clnt_id 
-   IS 'ID клиента';
+   IS 'ID РєР»РёРµРЅС‚Р°';
 COMMENT ON COLUMN test_data.subs_id
-   IS 'ID абонента';
+   IS 'ID Р°Р±РѕРЅРµРЅС‚Р°';
 COMMENT ON COLUMN test_data.all_pay_sum
-   IS 'Сумма платежей';
+   IS 'РЎСѓРјРјР° РїР»Р°С‚РµР¶РµР№';
 / 
--- для заполнения поля "Порядковый номер" в таблице test_data
+-- РґР»СЏ РїРµСЂРІРёС‡РЅРѕРіРѕ РєР»СЋС‡Р° РІ С‚Р°Р±Р»РёС†Рµ test_data
 CREATE SEQUENCE test_data_seq
  START WITH     1
  INCREMENT BY   1
  NOCYCLE;
 /
--- шаблон таблицы Клиенты
+-- С‚Р°Р±Р»РёС†Р° РєР»РёРµРЅС‚РѕРІ
 CREATE TABLE clients
     (id NUMBER(10) PRIMARY KEY
     );
 / 
--- шаблон таблицы абоненты
+-- С‚Р°Р±Р»РёС†Р° Р°Р±РѕРЅРµРЅС‚РѕРІ
 CREATE TABLE abonents
      (id NUMBER(10) PRIMARY KEY,
       id_client NUMBER(10),
