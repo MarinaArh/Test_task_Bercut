@@ -1,4 +1,4 @@
--- заполнение структур для тестирования
+-- Р·Р°РїРѕР»РЅРµРЅРёРµ СЃС‚СЂСѓРєС‚СѓСЂ С‚РµСЃС‚РѕРІС‹РјРё РґР°РЅРЅС‹РјРё
 INSERT INTO clients SELECT rownum FROM dual CONNECT BY ROWNUM <= 10;
 /
 INSERT INTO abonents SELECT ROWNUM, round(dbms_random.value(1,10)) FROM dual CONNECT BY ROWNUM <= 20;
